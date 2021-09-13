@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteRule ^([^.]*)/?$ index.php?param=$1 [L]
+
+
+# RewriteRule에 의해 주소에 들어오는 문자열을 $_GET['param']에 저장.
+# ex
+# [ http://127.0.0.1/test ] 는 RewriteRule에 의해
+# [ http://127.0.0.1/index.php?param=test ] 이렇게 변환.
