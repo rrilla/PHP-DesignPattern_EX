@@ -27,9 +27,15 @@
             default : $dir = _CONTROLLER; break;
         }
         
-        require_once("{$dir}{$className}.php");
+        // if(file_exists($dir)) require_once("{$dir}{$className}.php");
+        if(file_exists("{$dir}{$className}.php")){
+            require_once("{$dir}{$className}.php");
+        }else{
+            echo "404";
+            return;
+        }
+            
         // false시 404
-        
     }
 
 
